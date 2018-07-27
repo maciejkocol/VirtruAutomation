@@ -1,18 +1,8 @@
 package com.virtru.pages;
 
-import java.io.File;
-import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Iterator;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.io.FileHandler;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -82,38 +72,5 @@ public class BasePage {
     public void closeWindow(String pageTitle) throws InterruptedException {
         switchToWindow(pageTitle);
         driver.close();
-    }
-
-    /**
-     * This method captures and saves a video of the current test run.
-     * @param captureName as the name to save video with
-     */
-    public void captureSreenshot(String captureName) {
-        try {
-            String filePath = capturePath + "/" + captureDate + "_" + captureTest + "_" + captureName + "." + captureType;
-            createPath(filePath);
-            TakesScreenshot scrShot = ((TakesScreenshot)driver);
-            File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
-            File destFile = new File(filePath);
-            FileHandler.copy(srcFile, destFile);
-        } catch (Exception ex) {
-            System.err.println("Unable to capture screenshot...");
-            ex.printStackTrace();
-        }
-    }
-
-    /**
-     * This method creates the path for capturing results.
-     * @param filePath as the path to save under
-     */
-    public void createPath(String filePath) {
-        try {
-            File outFile = new File(filePath);
-            outFile.getParentFile().mkdirs();
-            if (!outFile.exists()) outFile.createNewFile();
-        } catch (Exception ex) {
-            System.err.println("Unable to create path...");
-            ex.printStackTrace();
-        }
     }
 }
