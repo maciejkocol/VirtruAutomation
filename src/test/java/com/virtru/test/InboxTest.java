@@ -41,7 +41,7 @@ public class InboxTest extends BaseTest {
      * Verify decrypted email body
      * @throws Exception
      */
-    @Test(priority = 0, groups = "search")
+    @Test(priority = 0)
     @Parameters({"user", "pass"})
     public void test_Decrypted_Email_Body(@Optional("") String user, @Optional("") String pass) throws Exception{
 
