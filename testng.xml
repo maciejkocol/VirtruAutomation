@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Virtru Automation Test Suite">
+  <parameter name="user" value="virtrutest101"></parameter>
+  <parameter name="pass" value="Test1234$"></parameter>
+  <test thread-count="5" name="Decrypted Test">
+    <classes>
+      <class name="com.virtru.test.InboxTest"/>
+    </classes>
+  </test> <!-- Decrypted Email Body Test -->
+</suite> <!-- Suite -->
