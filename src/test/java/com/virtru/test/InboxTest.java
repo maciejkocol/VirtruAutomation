@@ -101,10 +101,10 @@ public class InboxTest extends BaseTest {
         inboxPage.goToInbox();
 
         // Wait for email by subject
-        inboxPage.waitForNewEmail("Verify with Virtru on ");// + virtruPage.getDate());
+        inboxPage.waitForNewEmail("Verify with Virtru on " + virtruPage.getDate());
 
         // Open email by subject
-        inboxPage.openEmail("Verify with Virtru on ");// + virtruPage.getDate());
+        inboxPage.openEmail("Verify with Virtru on " + virtruPage.getDate());
 
         // Click verify me button
         inboxPage.verifyMe();
